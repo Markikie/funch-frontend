@@ -104,6 +104,7 @@ const AccountPage = () => {
         <div className="text-center max-w-xl mx-auto">
           Logged in as {user.name} ({user.email}) <br />
           <button
+            style={{ cursor: "pointer" }}
             onClick={logout}
             className="mt-4 bg-[#3A5F0B] text-white py-2 px-4 rounded-full hover:bg-[#800517]"
           >

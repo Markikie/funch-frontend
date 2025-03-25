@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState, createContext } from "react";
 
-export const UserContext = createContext({});
-export function UserContextProvider({ children }) {
+import { UserContext } from "./UserContext";
+
+const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -12,11 +13,11 @@ export function UserContextProvider({ children }) {
         setReady(true);
       });
     }
-  }, [user]);
-
+  }, []);
   return (
     <UserContext.Provider value={{ user, setUser, ready }}>
       {children}
     </UserContext.Provider>
   );
-}
+};
+export default UserContextProvider;

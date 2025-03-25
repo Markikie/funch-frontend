@@ -12,7 +12,7 @@ const LoginPage = () => {
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
-      const response = await axios.post("/user/login", { email, password });
+      const response = await axios.post("/api/login", { email, password });
       setUser(response.data);
       alert("Login successful.");
       setRedirect(true);

@@ -11,7 +11,7 @@ const RegisterPage = () => {
     ev.preventDefault();
     try {
       await axios
-        .post("/user/register", { name, email, password })
+        .post("/api/register", { name, email, password })
         .then((res) => {
           console.log(res.data);
         });
